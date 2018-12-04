@@ -8,7 +8,7 @@ import           Data.HashMap.Strict (HashMap)
 import qualified Data.HashMap.Strict as H
 import           Data.Text (Text)
 
-import           Disorder.Core
+-- import           Disorder.Core
 
 import           Hedgehog.Corpus
 
@@ -20,6 +20,11 @@ import           Spine.P
 
 import           Test.QuickCheck
 import           Test.QuickCheck.Instances ()
+
+-- | Generate something smaller
+smaller :: Gen a -> Gen a
+smaller g =
+  sized $ \s -> resize (s `div` 2) g
 
 instance Arbitrary Attribute where
   arbitrary =

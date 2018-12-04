@@ -4,14 +4,21 @@
 module Test.Spine.Memory where
 
 import Data.Text (Text)
-import Disorder.Core.IO
+-- import Disorder.Core.IO
 import Hedgehog.Corpus
 import Spine.Data
 import Spine.Memory
 import Spine.P
 
-import Test.Spine.Arbitrary ()
 import Test.QuickCheck
+import Test.QuickCheck.Monadic
+import Test.Spine.Arbitrary ()
+
+testIO :: Testable a => IO a -> Property
+testIO = testPropertyIO . run
+
+testPropertyIO :: Testable a => PropertyM IO a -> Property
+testPropertyIO = monadicIO . (=<<) stop
 
 prop_cast a@(Attribute key _) =
   isJust (cast a key) === True

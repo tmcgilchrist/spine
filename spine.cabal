@@ -61,7 +61,8 @@ test-suite test
   build-depends:
                        base                            >= 3          && < 5
                      , spine
-                     , ambiata-disorder-core
+                     , process
+                     , directory
                      , hedgehog-corpus
                      , amazonka-dynamodb
                      , unordered-containers
@@ -84,12 +85,12 @@ test-suite test-io
 
   build-depends:
                       base                            >= 3          && < 5
-                    , ambiata-disorder-core
                     , hedgehog-corpus
                     , spine
                     , mismi-core
                     , mismi-core-test
                     , amazonka-dynamodb
+                    , process
                     , lens
                     , text
                     , time

@@ -1,9 +1,9 @@
-import           Disorder.Core.Main
+import           Test.Spine.Main
 
 import qualified Test.Spine.Memory as Memory
 
 main :: IO ()
 main =
-  disorderMain [
+  spineMain [
       Memory.tests
     ]
