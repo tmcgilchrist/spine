@@ -1,6 +1,6 @@
 [submodule "lib/disorder"]
 	path = lib/disorder
-	url = git@github.com:tmcgilchrist/disorder.hs
+	url = https://github.com/tmcgilchrist/disorder.hs
 [submodule "lib/mismi"]
 	path = lib/mismi
-	url = git@github.com:tmcgilchrist/mismi
+	url = https://github.com/tmcgilchrist/mismi
